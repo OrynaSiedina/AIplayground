@@ -16,49 +16,51 @@ Welcome to AI Playground, where app creation meets simplicity. Whether you're a 
 Here's a guided tour of the AIPlayground, illustrating how to make the most of it:
 
 ### Homepage
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/d471b2ff-95c9-4d03-b8f0-f9525e6a94e2)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/e5079fa7-2ccc-4cf1-8e70-773951c97078)
 The homepage greets you with a captivating tagline. It features a single button that leads to the registration/login page.
 
 ### Authentication page
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/52571cb1-2ce2-4fdd-8683-e20c9091e321)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/f6ce4ec0-7f11-498d-89e9-a9256dc4aa1c)
 Here, you can effortlessly create a new account or log into an existing one. Upon registration, a verification email is sent, confirming your registration.
 
 ### Navigation bar
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/a6d76dc9-fd47-46ec-8617-cd54c7519f14)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/f1116adb-7466-401b-9ca6-cde9edc0452a)
 After logging in, a navigation bar appears, facilitating easy navigation throughout the AIPlayground. Use it to explore or log out.
 
 ### My Apps page
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/318c27b6-1d48-4602-81f0-6432799b284c)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/7db60f38-c7f8-4a53-8f9f-59d112ac634f)
 Upon login, you're directed to the My Apps page. View apps you've created and those saved from the AppStore. When no apps are created, a "Create your first app" button guides you to app creation. When no apps are saved, a "Pick from AppStore" button redirects you to the AppStore.
 
 ### Create App page
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/4e67c5c7-304b-413f-a087-487e3d61a8a7)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/faf9bb45-a709-4231-b326-dfd6857920e7)
 The magic happens here. Enter your app's name, description, and requirements, then click Create. The ChatGPT-generated app is just moments away.
 
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/17f9d916-0281-48e1-8d69-afb5a9f8154a)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/77602f16-c8bf-46a8-afb5-7d69293dcc1b)
 Your app is ready! Hit "Run" to experience ChatGPT's creation. Don't like it? Regenerate the app or tweak requirements. ChatGPT thrives on clarity.
 
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/693506b9-6e64-44f9-abdd-053d4336de53)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/ff4384d4-b58f-461b-88be-973a02992787)
 Clicking "Run" opens your app in a new browser tab.
 
 ### Back to the App List to share your app with the world
 
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/7e066ca4-a663-4d70-88bc-dd1a675c914a)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/14a9af67-b119-42d5-b591-00404412aab3)
 Your App List displays your creations. Run, delete, or download your app's source code. Sharing is next!
 
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/1eec6a89-e4f3-4709-84b6-10e6ec9e36c4)
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/048a194b-3ca0-48fc-9d15-138492ac30b6)
 Click "Share" to make your app public. Choose a category, like "games." A link pops up for sharing.
 
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/84069dca-53a3-4ac7-9f96-8a74c5d139e8)
-After you choose the category a window with link will show. You can share this link with your friends and show them what you created.
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/052ec5ff-686a-4ccd-8e6e-5acca4666ef8)
+After you choose the category a window with the link will show. You can share this link with your friends and show them what you created.
 
 ### AppStore page
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/201bb82a-49d3-4e2e-9bb4-172da164683a)
-Explore the AppStore, running apps and saving favorites. Filter by category using the tabs.
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/4680f233-cfe4-4925-b3c9-ca5dac86a683)
 
-### Change password page
-![image](https://github.com/green-fox-academy/Mantis-AIPlayground/assets/123012603/00d9a37b-1d83-47fa-8f7e-3ad7fecf346b)
-Change your password here. Fill the inputs, ensuring the new passwords match, and click to change.
+Explore the AppStore, run apps, and save favorites—filter by category using the tabs.
+
+### Change the password page
+![image](https://github.com/OrynaSiedina/AIplayground/assets/146128335/00271ca7-197c-470a-897c-9f284890ced1)
+
+Change your password here. Fill in the inputs, ensuring the new passwords match, and click to change.
 
 ## Used technologies
 - Spring Boot
@@ -70,14 +72,15 @@ Change your password here. Fill the inputs, ensuring the new passwords match, an
 - TypeScript
 - Docker
 - Postman
+- JUnit
+- Jest
+
 
 ## Contributors
 - [Lukáš Kubec](https://www.linkedin.com/in/lukas-kubec/) - techLead and product owner in one person
-- [Tomáš Emr](https://www.linkedin.com/in/tom%C3%A1%C5%A1-emr-8q5w2e0/) - DevOps specialist
-- [Arina Siedina](https://www.linkedin.com/in/siedina-oryna-43a539286/) - FrontEnd specialist
-- [Petr Laštovička](https://www.linkedin.com/in/petr-la%C5%A1tovi%C4%8Dka-3ab589287/) - AI specialist
-- [Václav Našinec](https://www.linkedin.com/in/va%C5%A1ek-na%C5%A1inec-0a0a08286/) - BackEnd specialist
-
+- [Tomáš Emr](https://www.linkedin.com/in/tom%C3%A1%C5%A1-emr-8q5w2e0/) 
+- [Arina Siedina](https://www.linkedin.com/in/siedina-oryna-43a539286/) 
+- [Václav Našinec](https://www.linkedin.com/in/va%C5%A1ek-na%C5%A1inec-0a0a08286/) 
 
 
 
