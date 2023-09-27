@@ -1,0 +1,25 @@
+:root {
+    /* COLORS */
+    --darkblue: rgb(19, 56, 99);
+    --gray: #333;
+    --blue: #3AD2ED;
+    --lightblue: #B4CDF1;
+
+    /* RADII */
+    --button-radius: 0.7rem;
+
+    /* SIZES */
+    --max-width: 758px;
+    --max-height: 420px;
+}
+
+body {
+    background: url("../../public/main_background.jpg") no-repeat fixed center;
+    padding-top: 2vh;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+}

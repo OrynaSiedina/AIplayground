@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mysql:
+      image: mariadb
+      ports:
+        - "3306:3306"
+      environment:
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+        - MYSQL_DATABASE=aiplayground
+      volumes:
+        - mysql-data:/var/lib/mysql
+  aiplaiground:
+    build:
+      context: .  # Current directory which contains Dockerfile for BE
+      dockerfile: Dockerfile  # This is the default name; only specify if different
+    image: lukaskubec/aiplaiground
+    ports:
+      - "8080:8080"
+    environment:
+      - EMAIL=${EMAIL}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - ACCESS_JWT_EXPIRATION=${ACCESS_JWT_EXPIRATION}
+      - ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
+      - FE_URL=${FE_URL}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_USER=root
+      - REFRESH_JWT_EXPIRATION=${REFRESH_JWT_EXPIRATION}
+      - REFRESH_TOKEN_SECRET=${REFRESH_TOKEN_SECRET}
+      - DB_URL=jdbc:mariadb://mysql:3306/aiplayground
+    depends_on:
+      - mysql
+    restart: on-failure
+
+  aiplayground-fe:
+    build:
+      context: ./frontend  # Path to frontend directory which contains Dockerfile for FE
+      dockerfile: Dockerfile  # If the Dockerfile is named differently, specify here
+    image: lukaskubec/aiplayground-fe
+    ports:
+      - "3000:3000"
+    depends_on:
+      - aiplaiground
+
+volumes:
+  mysql-data:

@@ -1,0 +1,71 @@
+name: Docker Compose Build and Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setting up SSH and environment
+        run: |
+          touch .env
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_SECRET }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan ${{ secrets.REMOTE_SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Build with Docker Compose
+        run: docker-compose build
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          ACCESS_JWT_EXPIRATION: ${{ secrets.ACCESS_JWT_EXPIRATION }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          FE_URL: ${{ secrets.FE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_USER: ${{ secrets.DB_USER }}
+          REFRESH_JWT_EXPIRATION: ${{ secrets.REFRESH_JWT_EXPIRATION }}
+          REFRESH_TOKEN_SECRET: ${{ secrets.REFRESH_TOKEN_SECRET }}
+          DB_URL: ${{ secrets.DB_URL }}
+
+      - name: Push with Docker Compose
+        run: docker-compose push
+
+      - name: Environment variables to server
+        run: |
+          touch .env && ssh -p 11022 -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_IP }} "
+            echo EMAIL=${{ secrets.EMAIL }} > ~/.env
+            echo EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} >> ~/.env
+            echo ACCESS_JWT_EXPIRATION=${{ secrets.ACCESS_JWT_EXPIRATION }} >> ~/.env
+            echo ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }} >> ~/.env
+            echo FE_URL=${{ secrets.FE_URL }} >> ~/.env
+            echo OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} >> ~/.env
+            echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> ~/.env
+            echo DB_USER=${{ secrets.DB_USER }} >> ~/.env
+            echo REFRESH_JWT_EXPIRATION=${{ secrets.REFRESH_JWT_EXPIRATION }} >> ~/.env
+            echo REFRESH_TOKEN_SECRET=${{ secrets.REFRESH_TOKEN_SECRET }} >> ~/.env
+            echo DB_URL=${{ secrets.DB_URL }} >> ~/.env
+            chmod 600 ~/.env
+          "
+      - name: Push docker-compose to server
+        run: |
+          scp -P 11022 -o StrictHostKeyChecking=no docker-compose.yaml ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_IP }}:~/docker-compose.yaml
+
+      - name: Deploy on Server
+        run: |
+          ssh -p 11022 -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_IP }} '~/manage_containers.sh ${{ secrets.DOCKER_HUB_USERNAME }} ${{ secrets.DOCKER_HUB_TOKEN }}'

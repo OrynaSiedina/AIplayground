@@ -1,0 +1,129 @@
+.container {
+    background-color: var(--darkblue);
+    border-radius: var(--button-radius);
+    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+    0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    position: relative;
+    height: var(--max-height);
+    min-width: var(--max-width);
+}
+
+.errorContainer {
+    width: var(--max-width);
+    margin: 0 auto 0;
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .errorContainer {
+        width: 100%;
+        padding-bottom: 0;
+        padding-top: 1rem;
+    }
+}
+
+.card {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+.switch {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.switchItem {
+    flex: 1;
+    flex-basis: 0;
+    text-align: center;
+}
+
+.signIn {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.rightPanelActive .signIn {
+    transform: translateX(100%);
+}
+
+.signUp {
+    left: 0;
+    opacity: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+.rightPanelActive .signUp {
+    animation: show 0.6s;
+    opacity: 1;
+    transform: translateX(100%);
+    z-index: 5;
+}
+
+.containerOverlay {
+    height: 100%;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: transform 0.6s ease-in-out;
+    width: 50%;
+    z-index: 100;
+}
+
+.rightPanelActive .containerOverlay {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background-blend-mode: multiply;
+    background: var(--lightblue) url("../../public/form_background2.jpg") no-repeat fixed center;
+    background-size: cover;
+    height: 100%;
+    left: -100%;
+    position: relative;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    width: 200%;
+}
+
+.rightPanelActive .overlay {
+    transform: translateX(50%);
+}
+
+.panel {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    width: 50%;
+}
+
+.overlayLeft {
+    transform: translateX(-20%);
+}
+
+.rightPanelActive .overlayLeft {
+    transform: translateX(0);
+}
+
+.overlayRight {
+    right: 0;
+    transform: translateX(0);
+}
+
+.rightPanelActive .overlayRight {
+    transform: translateX(20%);
+}
