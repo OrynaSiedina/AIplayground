@@ -1,4 +1,4 @@
-# Mantis-AIPlayground
+# AI Playground
 ## Create the app of your dreams by one click
 
 Welcome to AI Playground, where app creation meets simplicity. Whether you're a seasoned developer or new to coding, our platform empowers you to bring your app ideas to life effortlessly. With a user-friendly interface, you can describe your app's functionality, and our integrated ChatGPT API transforms your vision into a functional application. From creating and customizing to running and sharing, our app streamlines the entire process. Explore the App Store to discover and run apps from other creative minds. Join us and experience the future of app development, no coding skills required.
