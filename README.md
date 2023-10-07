@@ -78,9 +78,8 @@ Change your password here. Fill in the inputs, ensuring the new passwords match,
 
 ## Contributors
 - [Lukáš Kubec](https://www.linkedin.com/in/lukas-kubec/) - techLead and product owner in one person
-- [Tomáš Emr](https://www.linkedin.com/in/tom%C3%A1%C5%A1-emr-8q5w2e0/) 
+- [Tomáš Emr](https://www.linkedin.com/in/tom%C3%A1%C5%A1-emr-8q5w2e0/) - Devops
 - [Arina Siedina](https://www.linkedin.com/in/siedina-oryna-43a539286/) 
-- [Václav Našinec](https://www.linkedin.com/in/va%C5%A1ek-na%C5%A1inec-0a0a08286/) 
 
 
 
